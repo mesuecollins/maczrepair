@@ -22,8 +22,15 @@
               emailjs.sendForm('contact_service', 'contact_form', this)
                   .then(function() {
                       console.log('SUCCESS!');
+                      alert("Request Successfully Sent")
+                      document.getElementById("user_name").value="";
+                      document.getElementById("user_email").value="";
+                      document.getElementById("user_number").value="";
+                      document.getElementById("message").value="";
+
                   }, function(error) {
                       console.log('FAILED...', error);
+                      alert("Request Failed")
                   });
           });
       }
@@ -168,17 +175,17 @@
                 <div class="col-md-12">
                   <input type="hidden" name="contact_number">
                   <label>Name</label>
-                  <input class="form-control" type="text"  name="user_name"  placeholder="How would you like us to call you ?" >
+                  <input class="form-control" type="text"  id="user_name" name="user_name"  placeholder="How would you like us to call you ?" >
                 </div>
 
                 <div class="col-md-12 ">
                   <label>Email</label>
-                  <input class="form-control" type="email"   name="user_email" placeholder="Enter your email" >
+                  <input class="form-control" type="email"   id="user_email" name="user_email" placeholder="Enter your email" >
                 </div>
 
                 <div class="col-md-12 ">
                   <label>Phone</label>
-                  <input class="form-control" type="number"   name="user_number" placeholder="Enter your phone number" >
+                  <input class="form-control" type="number"   id="user_number" name="user_number" placeholder="Enter your phone number" >
                 </div>
 
                  <!-- <div class="col-md-12">
@@ -187,7 +194,7 @@
 
                 <div class="col-md-12">
                   <label>Message</label>
-                  <textarea   class="form-control" name="message" rows="6" placeholder="How can we help you ? "></textarea>
+                  <textarea   class="form-control" id="message" name="message" rows="6" placeholder="How can we help you ? "></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -196,20 +203,6 @@
 
               </div>
             </form>
-
-
-            <!-- <form id="contact-form">
-              <input type="hidden" name="contact_number">
-              <label>Name</label>
-              <input type="text" name="user_name">
-              <label>Email</label>
-              <input type="email" name="user_email">
-              <label>Message</label>
-              <textarea name="message"></textarea>
-              <input type="submit" value="Send">
-          </form> -->
-        
-
           </div>
         
           
