@@ -2,6 +2,32 @@
 <html lang="en">
 
 <head>
+
+  <!-- EmailJS CDN -->
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function() {
+          // https://dashboard.emailjs.com/admin/account
+          emailjs.init('87UqFbCUt16YBYUCn');
+      })();
+  </script>
+  <script type="text/javascript">
+      window.onload = function() {
+          document.getElementById('contact-form').addEventListener('submit', function(event) {
+              event.preventDefault();
+              // generate a five digit number for the contact_number variable
+              this.contact_number.value = Math.random() * 100000 | 0;
+              // these IDs from the previous steps
+              emailjs.sendForm('contact_service', 'contact_form', this)
+                  .then(function() {
+                      console.log('SUCCESS!');
+                  }, function(error) {
+                      console.log('FAILED...', error);
+                  });
+          });
+      }
+  </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -30,15 +56,7 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
 
-  <!-- EmailJS CDN -->
-  <script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
-<script type="text/javascript">
-(function(){emailjs.init("87UqFbCUt16YBYUCn");})();
-</script>
-
-<script src="index.js"></script>
+  
 
 </head>
 
@@ -70,9 +88,6 @@
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
                 </ul>
               </li>
               <li><a href="#">Dropdown 2</a></li>
@@ -145,41 +160,57 @@
           </div>
 
           <div class="col-lg-5" data-aos="fade">
-            <form onsubmit="sendMail()" class="php-email-form">
+             <form  id="contact-form" class="php-email-form">
               <h3>Get a quote</h3>
               <p>Describe the issue with the device or indicate the service needed together with your contacts to get a quick quote.</p>
               <div class="row gy-3">
 
                 <div class="col-md-12">
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+                  <input type="hidden" name="contact_number">
+                  <label>Name</label>
+                  <input class="form-control" type="text"  name="user_name"  placeholder="How would you like us to call you ?" >
                 </div>
 
                 <div class="col-md-12 ">
-                  <input type="email" id="Email" class="form-control" name="email" placeholder="Email" required>
+                  <label>Email</label>
+                  <input class="form-control" type="email"   name="user_email" placeholder="Enter your email" >
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12 ">
+                  <label>Phone</label>
+                  <input class="form-control" type="number"   name="user_number" placeholder="Enter your phone number" >
+                </div>
+
+                 <!-- <div class="col-md-12">
                   <input type="number" id="phone" class="form-control" name="phone" placeholder="Phone" required>
-                </div>
+                </div>  -->
 
                 <div class="col-md-12">
-                  <textarea class="form-control" id="message" name="message" rows="6" placeholder="How can we help you ? " required></textarea>
+                  <label>Message</label>
+                  <textarea   class="form-control" name="message" rows="6" placeholder="How can we help you ? "></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
-
-                  <button onclick="sendMail()" type="submit" >Get a quote</button>
-              
+                  <button type="submit"  value="Send">Get a Quote</button>
                 </div>
 
               </div>
             </form>
-          </div>
 
-          <script src="index.js"></script>
+
+            <!-- <form id="contact-form">
+              <input type="hidden" name="contact_number">
+              <label>Name</label>
+              <input type="text" name="user_name">
+              <label>Email</label>
+              <input type="email" name="user_email">
+              <label>Message</label>
+              <textarea name="message"></textarea>
+              <input type="submit" value="Send">
+          </form> -->
+        
+
+          </div>
         
           
           <!-- End Quote Form -->
