@@ -592,10 +592,13 @@ section {
 }
 
 .get-started .php-email-form {
-  background: #f4efdd;
+  background: #edfdfc;
   padding: 30px;
   height: 100%;
   border-radius: 20px;
+  outline: auto;
+  outline-color: #00c4b3;
+
 }
 
 @media (max-width: 575px) {
@@ -1153,7 +1156,9 @@ section {
   background-size: cover;
   background-position: center center;
   min-height: 400px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
+
 
 .alt-services h3 {
   font-size: 28px;
