@@ -13,7 +13,7 @@
 /* Colors */
 :root {
   --color-default: #364d59;
-  --color-primary: #feb900;
+  --color-primary: #00c4b3;
   --color-secondary: #52565e;
 }
 
@@ -685,7 +685,7 @@ section {
   transition: 0.4s;
   background-color: transparent;
   border-radius: 50px;
-  border-color:#feb900;
+  border-color:var(--color-primary);
   outline: auto;
   outline-color: var(--color-primary);
 
@@ -696,7 +696,7 @@ section {
 }
 
 .get-started .php-email-form button[type=submit]:hover {
-  background: rgba(254, 185, 0, 0.8);
+  background: var(--color-primary);
 }
 
 @-webkit-keyframes animate-loading {
@@ -759,6 +759,13 @@ section {
   padding: 40px;
   background: #fff;
   height: 100%;
+  border-radius: 4%;
+  
+}
+
+.services .service-item:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  
 }
 
 .services .service-item .icon {
