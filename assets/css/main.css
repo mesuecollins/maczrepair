@@ -1043,7 +1043,7 @@ section {
 
 .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
-  overflow: hidden;
+  overflow:hidden;
 }
 
 .testimonials .testimonial-item {
@@ -1136,6 +1136,7 @@ section {
   .testimonials .testimonials-carousel,
   .testimonials .testimonials-slider {
     overflow: hidden;
+     
   }
 
   .testimonials .testimonial-item {
