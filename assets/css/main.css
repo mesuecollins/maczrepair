@@ -37,7 +37,7 @@ a {
 }
 
 a:hover {
-  color: #ffc732;
+  color:var(--color-primary);
   text-decoration: none;
 }
 
@@ -2621,9 +2621,9 @@ section {
 --------------------------------------------------------------*/
 .footer {
   color: #fff;
-  background: url("../img/footer-bg.jpg") top center no-repeat;
+  background: url("../img/hero-carousel/hero-carousel-6.jpg") top center no-repeat;
   background-size: cover;
-  font-size: 14px;
+  font-size: 16px;
   padding: 80px 0 60px 0;
   position: relative;
 }
