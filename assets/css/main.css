@@ -595,7 +595,7 @@ section {
   background: #edfdfc;
   padding: 30px;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 15px;
   outline: auto;
   outline-color: #00c4b3;
 
@@ -1944,7 +1944,7 @@ section {
 .hero .info h2 {
   color: #fff;
   margin-bottom: 5px;
-  padding-bottom: 0px;
+  padding-bottom: 3px;
   font-size: 56px;
   font-weight: 700;
   position: relative;
