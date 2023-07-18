@@ -250,7 +250,7 @@ section {
 # Header
 --------------------------------------------------------------*/
 .header {
-  z-index: 997;
+  z-index: 10;
   position: absolute;
   padding: 0px 0;
   top: 0;
@@ -1943,8 +1943,8 @@ section {
 
 .hero .info h2 {
   color: #fff;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
+  margin-bottom: 5px;
+  padding-bottom: 0px;
   font-size: 56px;
   font-weight: 700;
   position: relative;
